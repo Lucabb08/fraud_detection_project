@@ -22,7 +22,8 @@ This repository has been structured according to the project template. Fill `env
 
 ## Quick start (how to run experiments)
 
-1) Put your dataset at `data/raw/creditcard.csv` (do not commit it to Git; it is ignored by `.gitignore`).
+1) Download the dataset from https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud and place it at `data/raw/creditcard.csv`.
+
 
 2) Train one model (example: logistic regression):
 
