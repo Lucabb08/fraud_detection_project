@@ -1,0 +1,12 @@
+name: fraud_classification
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - pip
+  - pip:
+    - seaborn

@@ -1,0 +1,18 @@
+# Data and results
+data/raw/
+results/
+*.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual env
+.env
+venv/
