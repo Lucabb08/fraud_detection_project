@@ -1,6 +1,8 @@
 # Data and results
-data/raw/
-results/
+data/raw/*
+!data/raw/README.md
+results/*
+!results/README.md
 *.joblib
 
 # Python
