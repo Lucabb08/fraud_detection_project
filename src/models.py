@@ -1,8 +1,3 @@
-"""Model builders returning sklearn estimators or pipelines.
-
-Provide functions like `build_logistic_pipeline`, `build_knn_pipeline`, `build_tree`, etc.
-"""
-
 from typing import List, Optional, Dict, Any
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -17,7 +12,6 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, Bagging
 def _make_num_cat_preprocessor(num_cols: Optional[List[str]] = None,
                                cat_cols: Optional[List[str]] = None):
     """Build a ColumnTransformer for numeric and categorical columns.
-
     If num_cols or cat_cols is None or empty, returns None (no preprocessor).
     """
     transformers = []
@@ -66,9 +60,7 @@ def build_random_forest(n_estimators: int = 200, class_weight: str = 'balanced',
 
 
 def build_adaboost(base_estimator=None, n_estimators: int = 50, **kwargs) -> AdaBoostClassifier:
-    """Return an AdaBoostClassifier. Try to pass the base estimator using the
-    newer 'estimator' keyword first (scikit-learn >= 1.2), otherwise fall back
-    to 'base_estimator' for older versions."""
+    """Return an AdaBoostClassifier"""
     try:
         return AdaBoostClassifier(estimator=base_estimator, n_estimators=n_estimators, **kwargs)
     except TypeError:
@@ -84,7 +76,7 @@ def build_bagging(base_estimator=None, n_estimators: int = 10, **kwargs) -> Bagg
 
 
 def build_voting(estimators: List = None, voting: str = 'soft', weights: Optional[List[float]] = None) -> VotingClassifier:
-    """Build a voting ensemble. estimators is a list of tuples: [('lr', lr_pipe), ('rf', rf), ...]"""
+    """Build a voting ensemble."""
     if estimators is None:
         raise ValueError("Provide estimators list, e.g. [('lr', pipe), ('rf', rf)]")
     return VotingClassifier(estimators=estimators, voting=voting, weights=weights)

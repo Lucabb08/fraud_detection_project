@@ -1,7 +1,3 @@
-"""Train multiple models and save them to `results/`.
-
-Usage: python -m src.train
-"""
 from src.data_loader import load_and_split, get_num_cat_columns
 from src.models import get_default_builders, build_voting, build_logistic_pipeline, build_random_forest
 from src.evaluation import print_scores

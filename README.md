@@ -1,18 +1,18 @@
-your-project/
+Project_organization
 ├── README.md           # Setup and usage instructions
-├── PROPOSAL.md         # Your project proposal
+├── PROPOSAL.md         # Project proposal
 ├── environment.yml     # Conda dependencies
-├── requirements.txt    # Pip dependencies (alternative)
-├── main.py             # Entry point - THIS MUST WORK
+├── requirements.txt    # Pip dependencies
+├── main.py             # Entry point
 ├── src/                # Source code modules
 │   ├── __init__.py
 │   ├── data_loader.py  # Data loading and preprocessing
 │   ├── models.py       # Model definitions
 │   └── evaluation.py   # Evaluation and visualization
 ├── data/
-│   └── raw/            # Original data (or instructions to download)
-├── results/            # Output figures and metrics
-└── notebooks/          # Jupyter notebooks (optional, for exploration)
+│   └── raw/            # Original dataset
+├── results/            
+└── notebooks/          
 
 # Setup & Usage
 
@@ -55,16 +55,3 @@ Instead of typing the full python command you can use Makefile shortcuts (run fr
 
 These shortcuts are convenience aliases to run experiments quickly from the terminal.
 
-4) Load a saved model in a script or notebook:
-
-```python
-import joblib
-mdl = joblib.load('results/logistic_pipeline.joblib')
-y_proba = mdl.predict_proba(X_test)[:,1]
-```
-
-5) If you want to run earlier scripts for compatibility, they are archived in `archive/`.
-
----
-
-If you want, I can add automatic metric JSON files to `results/` after each experiment; say if you want that by default.

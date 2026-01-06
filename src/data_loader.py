@@ -1,21 +1,9 @@
-"""Data loading and preprocessing utilities.
-
-Functions:
-- load_raw(path): load CSV file into a pandas DataFrame
-- load_and_split(path, target='Class', time_col='Time', test_size=0.2): load, sort by time_col, split chronologically and return X_train, X_test, y_train, y_test
-- get_num_cat_columns(X): return (num_cols, cat_cols) based on dtypes
-"""
-
 import os
 from typing import Tuple, List
 import pandas as pd
 
 
 def load_raw(path: str) -> pd.DataFrame:
-    """Load raw CSV file at `path` and return a DataFrame.
-
-    Raises FileNotFoundError with a helpful message if the file is missing.
-    """
     if not os.path.exists(path):
         raise FileNotFoundError(f"Data file not found: {path}. Put the dataset in data/raw/ or update the path.")
     return pd.read_csv(path)
@@ -23,7 +11,6 @@ def load_raw(path: str) -> pd.DataFrame:
 
 def load_and_split(path: str, target: str = 'Class', time_col: str = 'Time', test_size: float = 0.2) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
     """Load dataset from `path`, sort chronologically by `time_col` and split into train/test.
-
     Returns: X_train, X_test, y_train, y_test
     """
     df = load_raw(path)
