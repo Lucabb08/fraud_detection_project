@@ -55,3 +55,8 @@ Instead of typing the full python command you can use Makefile shortcuts (run fr
 
 These shortcuts are convenience aliases to run experiments quickly from the terminal.
 
+## Read the pdf which explains the project in detail
+
+project.pdf
+
+
